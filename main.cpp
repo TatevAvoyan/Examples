@@ -1,24 +1,33 @@
 #include "iostream"
+using namespace std;
 
-enum cardinal_dirctions {
-    north = 25,
-    south,
-    east,
-    west
-};
 
 int main() {
 
-    std::cout << "Displaying directions and their symbolic values" << std::endl;
+    cout << "Enter two numbers: ";
+    float Num1 = 0, Num2 = 0;
+    cin >> Num1;
+    cin >> Num2;
 
-    std::cout << "North: " << north << std::endl;
-    std::cout << "South:  " << south << std::endl;
-    std::cout << "East:  " << east << std::endl;
-    std::cout << "West: " << west << std::endl;
+    cout << "Enter 'd' to divide, anything else to multiply: ";
+    char UserSelection = '\0';
+    cin >> UserSelection;
 
-    cardinal_dirctions wind_directions = south;
-
-    std::cout << "Variable wind_direction = " << wind_directions << std::endl;
+    if (UserSelection == 'd') {
+        cout << "You want division!" << endl;
+        if (Num2 != 0) {
+            cout << "No div-by-zero, proceeding to calculate"
+                 << endl;
+            cout << Num1 << " / " << Num2 << " = " << Num1 / Num2
+                 << endl;
+        } else {
+            cout << "Division by zero is not allowed" << endl;
+        }
+    } else{
+        cout << "You want multiplication!" << endl;
+        cout << Num1 << " x " << Num2 << " = " << Num1 * Num2
+             << endl;
+    }
 
     return 0;
 }
