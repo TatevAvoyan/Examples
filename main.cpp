@@ -4,30 +4,38 @@ using namespace std;
 
 int main() {
 
-    cout << "Enter two numbers: ";
-    float Num1 = 0, Num2 = 0;
-    cin >> Num1;
-    cin >> Num2;
+    enum DaysOfWeek {
+        Sunday = 0,
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday
+    };
 
-    cout << "Enter 'd' to divide, anything else to multiply: ";
-    char UserSelection = '\0';
-    cin >> UserSelection;
+    cout << "Find what days of the week are named after!" << endl;
+    cout << "Enter a number for a day (Sunday = 0): " << endl;
 
-    if (UserSelection == 'd') {
-        cout << "You want division!" << endl;
-        if (Num2 != 0) {
-            cout << "No div-by-zero, proceeding to calculate"
-                 << endl;
-            cout << Num1 << " / " << Num2 << " = " << Num1 / Num2
-                 << endl;
-        } else {
-            cout << "Division by zero is not allowed" << endl;
-        }
-    } else{
-        cout << "You want multiplication!" << endl;
-        cout << Num1 << " x " << Num2 << " = " << Num1 * Num2
-             << endl;
-    }
+    int Day = Sunday;
+    cin >> Day;
+
+    if (Day == Sunday)
+        cout << "Sunday was named after the Sun" << endl;
+    else if (Day == Monday)
+        cout << "Monday was named after the Moon" << endl;
+    else if (Day == Tuesday)
+        cout << "Tuesday was named after Mars" << endl;
+    else if (Day == Wednesday)
+        cout << "Wednesday was named after Mercury" << endl;
+    else if (Day == Thursday)
+        cout << "Thursday was named after Jupiter" << endl;
+    else if (Day == Friday)
+        cout << "Friday was named after Venus" << endl;
+    else if (Day == Saturday)
+        cout << "Saturday was named after Saturn" << endl;
+    else
+    cout << "Wrong input, execute again" << endl;
 
     return 0;
 }
