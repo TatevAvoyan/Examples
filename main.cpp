@@ -20,22 +20,31 @@ int main() {
     int Day = Sunday;
     cin >> Day;
 
-    if (Day == Sunday)
-        cout << "Sunday was named after the Sun" << endl;
-    else if (Day == Monday)
-        cout << "Monday was named after the Moon" << endl;
-    else if (Day == Tuesday)
-        cout << "Tuesday was named after Mars" << endl;
-    else if (Day == Wednesday)
-        cout << "Wednesday was named after Mercury" << endl;
-    else if (Day == Thursday)
-        cout << "Thursday was named after Jupiter" << endl;
-    else if (Day == Friday)
-        cout << "Friday was named after Venus" << endl;
-    else if (Day == Saturday)
-        cout << "Saturday was named after Saturn" << endl;
-    else
-    cout << "Wrong input, execute again" << endl;
+    switch (Day) {
+        case Sunday:
+            cout << "Sunday was named after the Sun" << endl;
+            break;
+        case Monday:
+            cout << "Monday was named after the Moon" << endl;
+            break;
+        case Tuesday:
+            cout << "Tuesday was named after Mars" << endl;
+            break;
+        case Wednesday:
+            cout << "Wednesday was named after Mercury" << endl;
+            break;
+        case Thursday:
+            cout << "Thursday was named after Jupiter" << endl;
+            break;
+        case Friday:
+            cout << "Friday was named after Venus" << endl;
+            break;
+        case Saturday:
+            cout << "Saturday was named after Saturn" << endl;
+            break;
+        default:
+            cout << "Wrong input, execute again" << endl;
+    }
 
     return 0;
 }
