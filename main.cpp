@@ -3,21 +3,19 @@ using namespace std;
 
 int main() {
 
-    const int ARRAY_LENGTH = 5;
-    int MyInts[ARRAY_LENGTH] = {0};
+    for(char UserSelection = 'm'; (UserSelection != 'x'); ) {
+        cout << "Enter the two integers: " << endl;
+        int Num1 = 0, Num2 = 0;
+        cin >> Num1;
+        cin >> Num2;
 
-    cout << "Populate array of " << ARRAY_LENGTH << " integers" << endl;
+        cout << Num1 << " x " << Num2 << " = " << Num1 * Num2 << endl;
+        cout << Num1 << " + " << Num2 << " = " << Num1 + Num2 << endl;
 
-    for(int ArrayIndex = 0; ArrayIndex < ARRAY_LENGTH; ++ArrayIndex){
-        cout << "Enter an integer for element " << ArrayIndex << ": ";
-        cin >> MyInts[ArrayIndex];
+        cout << "Press x to exit(x) or any other key to recalculate" << endl;
+        cin >> UserSelection;
     }
-
-    cout << "Displaying contents of the array: " << endl;
-
-    for(int ArrayIndex = 0; ArrayIndex < ARRAY_LENGTH; ++ArrayIndex){
-        cout << "Element  " << ArrayIndex << " = " << MyInts[ArrayIndex] << endl;
-    }
+    cout << "Goodbye!";
 
     return 0;
 }
