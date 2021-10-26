@@ -1,24 +1,22 @@
 #include "iostream"
-
-enum cardinal_dirctions {
-    north = 25,
-    south,
-    east,
-    west
-};
+using namespace std;
 
 int main() {
 
-    std::cout << "Displaying directions and their symbolic values" << std::endl;
+    cout << "This program will help you multiply two numbers" << endl;
 
-    std::cout << "North: " << north << std::endl;
-    std::cout << "South:  " << south << std::endl;
-    std::cout << "East:  " << east << std::endl;
-    std::cout << "West: " << west << std::endl;
+    cout << "Enter the first number: ";
+    int FirstNumber = 0;
+    cin >> FirstNumber;
 
-    cardinal_dirctions wind_directions = south;
+    cout << "Enter the second number: ";
+    int SecondNumber = 0;
+    cin >> SecondNumber;
 
-    std::cout << "Variable wind_direction = " << wind_directions << std::endl;
+    int MultiplicationResult = FirstNumber * SecondNumber;
+
+    cout << FirstNumber << " x " << SecondNumber;
+    cout << " = " << MultiplicationResult << endl;
 
     return 0;
 }
