@@ -4,22 +4,19 @@ using namespace std;
 
 int main() {
 
-    JumpToPoint:
-    int Num1 = 0, Num2 = 0;
+    char UserSelection = 'm';
+    while (UserSelection != 'x') {
+        cout << "Enter two integers: " << endl;
+        int Num1 = 0, Num2 = 0;
+        cin >> Num1;
+        cin >> Num2;
 
-    cout << "Enter two integers: " << endl;
-    cin >> Num1;
-    cin >> Num2;
+        cout << Num1 << " x " << Num2 << " = " << Num1 * Num2 << endl;
+        cout << Num1 << " + " << Num2 << " = " << Num1 + Num2 << endl;
 
-    cout << Num1 << " x " << Num2 << " = " << Num1 * Num2 << endl;
-    cout << Num1 << " + " << Num2 << " = " << Num1 + Num2 << endl;
-
-    cout << "Do yoy wish to perform another operation (y/n)?" << endl;
-    char Repeat = 'y';
-    cin >> Repeat;
-
-    if(Repeat == 'y')
-        goto JumpToPoint;
+        cout << "Press x to exit(x) or any other key to recalculate" << endl;
+        cin >> UserSelection;
+    }
 
     cout << "Goodbye!" << endl;
 
