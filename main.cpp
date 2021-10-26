@@ -3,20 +3,21 @@ using namespace std;
 
 int main() {
 
-    cout << "This program will help you multiply two numbers" << endl;
+    char UserSelection = 'x';
+    do {
+        cout << "Enter the two integers: " << endl;
+        int Num1 = 0, Num2 = 0;
+        cin >> Num1;
+        cin >> Num2;
 
-    cout << "Enter the first number: ";
-    int FirstNumber = 0;
-    cin >> FirstNumber;
+        cout << Num1 << " x " << Num2 << " = " << Num1 * Num2 << endl;
+        cout << Num1 << " + " << Num2 << " = " << Num1 + Num2 << endl;
 
-    cout << "Enter the second number: ";
-    int SecondNumber = 0;
-    cin >> SecondNumber;
+        cout << "Press x to exit(x) or any other key to recalculate" << endl;
+        cin >> UserSelection;
 
-    int MultiplicationResult = FirstNumber * SecondNumber;
-
-    cout << FirstNumber << " x " << SecondNumber;
-    cout << " = " << MultiplicationResult << endl;
+    } while (UserSelection != 'x');
+        cout << "Goodbye!" << endl;
 
     return 0;
 }
