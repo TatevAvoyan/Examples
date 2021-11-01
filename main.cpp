@@ -3,21 +3,19 @@ using namespace std;
 
 int main() {
 
-    const int ARRAY1_LEN = 3;
-    const int ARRAY2_LEN = 2;
+    const int MAX_ROWS = 3;
+    const int MAX_COLS = 4;
 
-    int MyInts1[ARRAY1_LEN] = {35, -3, 0};
-    int MyInts2[ARRAY2_LEN] = {20, -1};
-
-    cout << "Multiplying each int in MyInts1 by each in MyInts2: " << endl;
-
-    for(int Array1Index = 0; Array1Index < ARRAY1_LEN; ++Array1Index)
-        for(int Array2Index = 0;
-                Array2Index < ARRAY2_LEN; ++Array2Index)
-            cout << MyInts1[Array1Index] << " x "
-                 << MyInts2[Array2Index] \
-                 << " = " << MyInts1[Array1Index] * MyInts2[Array2Index]
-                 << endl;
+    int MyInts[MAX_ROWS][MAX_COLS] = { {34, -1, 879, 22},
+                                       {24, 365, -101, -1},
+                                       {-20, 40, 90, 97} };
+    
+    for (int Row = 0; Row < MAX_ROWS; ++Row) {
+        for (int Column = 0; Column < MAX_COLS; ++Column){
+            cout << "Integer[" << Row << "][" << Column \
+                 << "] = " << MyInts[Row][Column] << endl;
+        }
+    }
 
     return 0;
 }
