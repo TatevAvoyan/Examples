@@ -3,19 +3,26 @@ using namespace std;
 
 int main() {
 
-    const int MAX_ROWS = 3;
-    const int MAX_COLS = 4;
+    const int NumsToCal = 5;
+    cout << "This program wil calculate " << NumsToCal \
+         << " Fibonacci Numbers at a time" << endl;
 
-    int MyInts[MAX_ROWS][MAX_COLS] = { {34, -1, 879, 22},
-                                       {24, 365, -101, -1},
-                                       {-20, 40, 90, 97} };
-    
-    for (int Row = 0; Row < MAX_ROWS; ++Row) {
-        for (int Column = 0; Column < MAX_COLS; ++Column){
-            cout << "Integer[" << Row << "][" << Column \
-                 << "] = " << MyInts[Row][Column] << endl;
+    int Num1 = 0, Num2 = 1;
+    char WantMore = '\0';
+    cout << Num1 << " " << Num2 << " ";
+
+    do {
+        for (int Index = 0; Index < NumsToCal; ++Index) {
+            cout << Num1 + Num2 << " ";
+
+            int Num2Temp = Num2;
+            Num2 = Num1 + Num2;
+            Num1 = Num2Temp;
         }
-    }
+        cout << endl << "Do you want more numbers (y/n)? ";
+        cin >> WantMore;
+    } while (WantMore == 'y');
+    cout << "Goodbye!" << endl;
 
     return 0;
 }
