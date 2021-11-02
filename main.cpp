@@ -3,17 +3,23 @@ using namespace std;
 
 int main(){
 
-    int DogsAge = 30;
-    cout << "Initialized DogsAge = " << DogsAge << endl;
+    int Age = 30;
+   double Pi = 3.1416;
+   char SayYes = 'y';
 
-    int* pAge = &DogsAge;
-    cout << "pAge points to Dog'sAge" << endl;
-    cout << "Enter an age for your dog: " ;
+   int* pInt = &Age;
+   double* pDouble = &Pi;
+   char* pChar = &SayYes;
 
-    cin >> *pAge;
+    cout << "sizeof fundamental types - " << endl;
+    cout << "sizeof(int) = " << sizeof(int) << endl;
+    cout << "sizeof(double) = " << sizeof(double) << endl;
+    cout << "sizeof(char) = " << sizeof(char) << endl;
 
-    cout << "Input stored using pAge at Ox" << hex << pAge << endl;
-    cout << "Integer DogsAge = " << dec << DogsAge << endl;
+    cout << "sizeof pointers to fundamental types - " << endl;
+    cout << "sizeof(pInt) = " << sizeof(pInt) << endl;
+    cout << "sizeof(pDouble) = " << sizeof(pDouble) << endl;
+    cout << "sizeof(pChar) = " << sizeof(pChar) << endl;
 
     return 0;
 }
