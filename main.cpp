@@ -1,25 +1,22 @@
 #include "iostream"
+#include "cstring"
 using namespace std;
 
 int main(){
 
-    int Age = 30;
-   double Pi = 3.1416;
-   char SayYes = 'y';
+    cout << "Enter your name: ";
+    string Name;
+    cin >> Name;
 
-   int* pInt = &Age;
-   double* pDouble = &Pi;
-   char* pChar = &SayYes;
+    int CharsToAllocate = Name.length() + 1;
 
-    cout << "sizeof fundamental types - " << endl;
-    cout << "sizeof(int) = " << sizeof(int) << endl;
-    cout << "sizeof(double) = " << sizeof(double) << endl;
-    cout << "sizeof(char) = " << sizeof(char) << endl;
+    char* CopyOfName = new char [CharsToAllocate];
 
-    cout << "sizeof pointers to fundamental types - " << endl;
-    cout << "sizeof(pInt) = " << sizeof(pInt) << endl;
-    cout << "sizeof(pDouble) = " << sizeof(pDouble) << endl;
-    cout << "sizeof(pChar) = " << sizeof(pChar) << endl;
+    strcpy(CopyOfName, Name.c_str());
+
+    cout << "Dynamically allocated buffer contains: " << CopyOfName << endl;
+
+    delete[] CopyOfName;
 
     return 0;
 }
