@@ -1,34 +1,20 @@
 #include "iostream"
 using namespace std;
 
-double Area(double InputRadius, double Pi = 3.14);
+int GetFibNumber (int FibIndex) {
+    if(FibIndex < 2)
+        return FibIndex;
+    else
+        return GetFibNumber(FibIndex - 1) + GetFibNumber(FibIndex -2);
+}
 
 int main() {
 
-    cout << "Enter the radius: ";
-    double Radius = 0;
-    cin >> Radius;
+    cout << "Enter 0-based index of desired Fibonacci Number: ";
+    int Index = 0;
+    cin >> Index;
 
-    cout << "Pi is 3.14, do you wish to change this (y / n)? ";
-    char ChangePi = 'n';
-    cin >> ChangePi;
-
-    double CircleArea = 0;
-    if (ChangePi == 'y') {
-        cout << "Enter new Pi: ";
-        double NewPi = 3.14;
-        cin >> NewPi;
-        CircleArea = Area(Radius, NewPi);
-    } else {
-        CircleArea = Area(Radius);
-    }
-
-    cout << "Area is: " << CircleArea << endl;
+    cout << "Fibonacci number is: " <<  GetFibNumber(Index) << endl;
 
     return 0;
-}
-
-double Area(double InputRadius, double Pi) {
-
-    return Pi * InputRadius * InputRadius;
 }
