@@ -1,27 +1,29 @@
 #include "iostream"
+#include "algorithm"
+#include "vector"
 using namespace std;
 
-void DisplayArray(int Numbers[], int Length){
-    for (int Index = 0; Index < Length; ++Index) {
-        cout << Numbers[Index] << " ";
-    }
-    cout << endl;
+void DisplayNums(vector<int>& DynArray){
+    for_each (DynArray.begin(), DynArray.end(), \
+            [](int Element) {cout << Element << " ";} );
 }
 
-void DisplayArray(char Characters[], int Length){
-    for (int Index = 0; Index < Length; ++Index) {
-        cout << Characters[Index] << " ";
-    }
-    cout << endl;
-}
+int main(){
 
-int main() {
+    vector<int> MyNumbers;
+    MyNumbers.push_back(501);
+    MyNumbers.push_back(-1);
+    MyNumbers.push_back(25);
+    MyNumbers.push_back(-35);
 
-    int MyNumbers[4] = {24, 58, -1, 245};
-    DisplayArray(MyNumbers, 4);
+    DisplayNums(MyNumbers);
 
-    char MyStatement[7] = {'H', 'e', 'l', 'l', 'o', '!', '\0'};
-    DisplayArray(MyStatement, 7);
+    cout << "Sorting them in descending order" << endl;
+
+    sort (MyNumbers.begin(), MyNumbers.end(), \
+    [](int Num1, int Num2) {return (Num2 < Num1); } );
+
+    DisplayNums(MyNumbers);
 
     return 0;
 }
