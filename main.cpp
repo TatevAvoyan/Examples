@@ -3,18 +3,19 @@ using namespace std;
 
 int main(){
 
-  int* pTemperature;
+    int* pTemperature;
 
-  cout << "Is it sunny (y/n)?" << endl;
-  char UserInput = 'y';
-  cin >> UserInput;
+    cout << "Is it sunny (y/n)?" << endl;
+    char UserInput = 'y';
+    cin >> UserInput;
 
-  if (UserInput == 'y'){
-      pTemperature = new int;
-      *pTemperature = 30;
-  }
-  cout << "Temperature is: " << *pTemperature;
-  delete pTemperature;
+    if (UserInput == 'y'){
+        int* pTemperature = new int;
+        *pTemperature = 30;
+        cout << "Temperature is: " << *pTemperature;
+        delete pTemperature;
+    }
+
 
     return 0;
 }
