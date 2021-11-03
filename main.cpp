@@ -3,12 +3,11 @@ using namespace std;
 
 int main(){
 
-    try {
-        int* pAge = new int [536875670911];
+    int* pAge = new(nothrow) int [0x1ffffffffff];
 
+    if(pAge) {
         delete[] pAge;
-    }
-    catch (bad_alloc) {
+    } else {
         cout << "Memory allocation failed. Ending program" << endl;
     }
 
