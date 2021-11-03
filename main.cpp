@@ -3,19 +3,14 @@ using namespace std;
 
 int main(){
 
-    int* pTemperature;
+    try {
+        int* pAge = new int [536875670911];
 
-    cout << "Is it sunny (y/n)?" << endl;
-    char UserInput = 'y';
-    cin >> UserInput;
-
-    if (UserInput == 'y'){
-        int* pTemperature = new int;
-        *pTemperature = 30;
-        cout << "Temperature is: " << *pTemperature;
-        delete pTemperature;
+        delete[] pAge;
     }
-
+    catch (bad_alloc) {
+        cout << "Memory allocation failed. Ending program" << endl;
+    }
 
     return 0;
 }
