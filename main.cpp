@@ -1,22 +1,32 @@
 #include "iostream"
-#include "cstring"
 using namespace std;
 
 int main(){
 
-    cout << "Enter your name: ";
-    string Name;
-    cin >> Name;
+    cout << "How many integers you wish to enter?";
+    int InputNums = 0;
+    cin >> InputNums;
 
-    int CharsToAllocate = Name.length() + 1;
+    int* pNumbers = new int [InputNums];
+    int* pCopy = pNumbers;
 
-    char* CopyOfName = new char [CharsToAllocate];
+    cout << "Successfully allocated memory for " << InputNums << " integers" << endl;
 
-    strcpy(CopyOfName, Name.c_str());
+    for (int Index = 0; Index < InputNums; ++Index) {
+        cout << "Enter number " << Index << ": ";
+        cin >> *(pNumbers + Index);
+    }
 
-    cout << "Dynamically allocated buffer contains: " << CopyOfName << endl;
+    cout << "Displaying all numbers input: " << endl;
+    for (int Index = 0, int* pCopy = pNumbers;
+             Index < InputNums; ++Index)
+        cout << *(pCopy++) << " ";
 
-    delete[] CopyOfName;
+    cout << endl;
+
+    delete[] pNumbers;
+
+
 
     return 0;
 }
